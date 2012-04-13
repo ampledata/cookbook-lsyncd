@@ -20,6 +20,8 @@ Attributes
 * `['lsyncd']['conf']`: Configuration file name.
 * `['lsyncd']['src']['prereqs']['packages']`: Prerequisite packages for
   building lsyncd.
+* `['lsyncd']['bin']`: Destination path for lsyncd binary.
+* `['lsyncd']['cmd']`: Command arguments to pass to supervisord.
 
 Usage
 =====
