@@ -30,3 +30,11 @@ Add this Recipe to your Run List.
 License
 =======
 Apache License 2.0
+
+Author
+======
+Greg Albrecht <gba@gregalbrecht.com>
+
+Copyright
+=========
+Copyright 2012 Greg Albrecht
