@@ -2,8 +2,8 @@
 # Attributes for lsyncd Cookbook.
 #
 # Cookbook Name:: lsyncd
-# Author:: Greg Albrecht <gba@splunk.com>
-# Copyright:: Copyright 2012 Splunk, Inc.
+# Author:: Greg Albrecht <gba@gregalbrecht.com>
+# Copyright:: Copyright 2012 Greg Albrecht
 # License:: Apache License 2.0
 #
 
@@ -24,12 +24,14 @@ default['lsyncd']['src']['dest'] = ::File.join(
   'lsyncd')
 
 default['lsyncd']['src']['prereqs']['packages'] = [
-  'asciidoc', 'autoconf', 'build-essential', 'liblua5.1-0-dev', 'lua5.1']
+  'asciidoc', 'autoconf', 'build-essential', 'liblua5.1-0-dev', 'lua5.1', 'git']
 
 # e.g. /usr/local/bin/lsyncd
 default['lsyncd']['bin'] = ::File.join(
   ::File::SEPARATOR, 'usr', 'local', 'bin', 'lsyncd')
 
+default['lsyncd']['options'] = '--nodaemon'
+
 # e.g. /usr/local/bin/lsyncd /etc/lsyncd.conf.lua
 default['lsyncd']['cmd'] = [
-  default['lsyncd']['bin'], default['lsyncd']['conf']].join(' ')
+  default['lsyncd']['bin'], default['lsyncd']['options'], default['lsyncd']['conf']].join(' ')

@@ -3,8 +3,8 @@
 #
 # Recipe:: default
 # Cookbook Name:: lsyncd
-# Author:: Greg Albrecht <gba@splunk.com>
-# Copyright:: Copyright 2012 Splunk Inc.
+# Author:: Greg Albrecht <gba@gregalbrecht.com>
+# Copyright:: Copyright 2012 Greg Albrecht
 # License:: Apache License 2.0
 #
 
