@@ -21,11 +21,13 @@ Attributes
 * `['lsyncd']['src']['prereqs']['packages']`: Prerequisite packages for
   building lsyncd.
 * `['lsyncd']['bin']`: Destination path for lsyncd binary.
+* `['lsyncd']['options']`: Extra options to pass to lsyncd through supervisord.
 * `['lsyncd']['cmd']`: Command arguments to pass to supervisord.
 
 Usage
 =====
-Add this Recipe to your Run List.
+Add this Recipe to your Run List. You will likely want to add `apt` and
+`build-essential` to the run list, but they are not required.
 
 License
 =======
