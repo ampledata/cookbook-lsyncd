@@ -24,7 +24,7 @@ execute 'lsyncd src autogen' do
   action :nothing
   command './autogen.sh'
   cwd node['lsyncd']['src']['dest']
-  subscribes(:run, resources(:git => 'lsyncd src sync'))
+  subscribes :run, "git[lsyncd src sync]"
 end
 
 
@@ -32,7 +32,7 @@ execute 'lsyncd src configure' do
   action :nothing
   command './configure'
   cwd node['lsyncd']['src']['dest']
-  subscribes(:run, resources(:execute => 'lsyncd src autogen'))
+  subscribes :run, "execute[lsyncd src autogen]"
 end
 
 
@@ -40,5 +40,5 @@ execute 'lsyncd src make' do
   action :nothing
   command 'make'
   cwd node['lsyncd']['src']['dest']
-  subscribes(:run, resources(:execute => 'lsyncd src configure'))
+  subscribes :run, "execute[lsyncd src configure]"
 end
