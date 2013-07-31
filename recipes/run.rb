@@ -10,7 +10,9 @@
 
 
 supervisor_service 'lsyncd' do
-  action [:enable, :start]
+  action :enable
+  autostart true
+  autorestart true
   only_if{ ::File.exists?(node['lsyncd']['bin']) }
   command node['lsyncd']['cmd']
   process_name 'lsyncd'

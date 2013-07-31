@@ -8,7 +8,10 @@
 # License:: Apache License 2.0
 #
 
+package 'asciidoc' do
+  options '--no-install-recommends'
+end
 
 node['lsyncd']['src']['prereqs']['packages'].each do |pkg|
-  package(pkg).run_action(:install)
+  package pkg
 end

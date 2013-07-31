@@ -21,11 +21,24 @@ Attributes
 * `['lsyncd']['src']['prereqs']['packages']`: Prerequisite packages for
   building lsyncd.
 * `['lsyncd']['bin']`: Destination path for lsyncd binary.
+* `['lsyncd']['options']`: Extra options to pass to lsyncd through supervisord.
 * `['lsyncd']['cmd']`: Command arguments to pass to supervisord.
 
 Usage
 =====
-Add this Recipe to your Run List.
+Add this Recipe to your Run List. You will likely want to add `apt` and
+`build-essential` to the run list, but they are not required.
+
+Testing
+=======
+To test changes, you will need to use [test-kitchen](https://github.com/opscode/test-kitchen) `>= 1.0`. You can use the
+`Gemfile` included to run tests, but the gems can be installed globally.
+A couple of prereqs that need to be installed as packages are [Vagrant](http://www.vagrantup.com/)
+and [Virtualbox](https://www.virtualbox.org/)
+
+    $ vagrant plugin install vagrant-berkshelf
+    $ bundle install
+    $ bundle exec kitchen test
 
 License
 =======
